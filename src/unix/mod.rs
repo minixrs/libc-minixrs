@@ -2494,6 +2494,9 @@ cfg_if! {
     } else if #[cfg(target_os = "nuttx")] {
         mod nuttx;
         pub use self::nuttx::*;
+    } else if #[cfg(target_os = "minixrs")] {
+        mod minixrs;
+        pub use self::minixrs::*;
     } else {
         // Unknown target_os
     }
