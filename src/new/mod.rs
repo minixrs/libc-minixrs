@@ -90,6 +90,9 @@ cfg_if! {
     } else if #[cfg(target_os = "linux")] {
         mod linux_uapi;
         pub(crate) use linux_uapi::*;
+    } else if #[cfg(target_os = "minixrs")] {
+        mod minixrs;
+        pub(crate) use minixrs::*;
     } else if #[cfg(target_os = "netbsd")] {
         mod netbsd;
         pub(crate) use netbsd::*;
